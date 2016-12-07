@@ -10,6 +10,6 @@ import (
 
 func init() {
 	beego.Router("/", &controllers.MainController{})
-	beego.Router("/User/:id", &controllers.AdminController{})
+	beego.Include(&controllers.AdminController{})
 
 }
