@@ -9,7 +9,7 @@ import (
 //create a get, put, post and delete!!!
 
 func init() {
-	beego.Router("/", &controllers.MainController{})
+	//beego.Router("/", &controllers.MainController{})
 	beego.Include(&controllers.AdminController{})
 
 }
