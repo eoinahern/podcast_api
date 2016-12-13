@@ -15,6 +15,7 @@ type AdminController struct {
 func (a *AdminController) URLMapping() {
 	a.Mapping("GetAdmin", a.GetAdmin)
 	a.Mapping("AddAdmin", a.AddAdmin)
+	a.Mapping("DeleteAdmin", a.DeleteAdmin)
 }
 
 // @router /user/:id [get]
@@ -59,7 +60,7 @@ func (u *AdminController) AddAdmin() {
 
 //delete account. more params passed including key
 //@router /user/:id  [delete]
-func (u *AdminController) deleteAdmin() {
+func (u *AdminController) DeleteAdmin() {
 
 	var id string = u.GetString(":id")
 	if id == "1" || id == "2" {
