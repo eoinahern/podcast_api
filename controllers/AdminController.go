@@ -57,13 +57,23 @@ func (u *AdminController) AddAdmin() {
 	u.Ctx.WriteString("success")
 }
 
-/*
 //delete account. more params passed including key
-//@router /user/:id [delete]
+//@router /user/:id  [delete]
 func (u *AdminController) deleteAdmin() {
+
+	var id string = u.GetString(":id")
+	if id == "1" || id == "2" {
+		u.Ctx.ResponseWriter.WriteHeader(200)
+		u.Ctx.WriteString("success")
+		return
+	}
+
+	u.Ctx.ResponseWriter.WriteHeader(404)
+	u.Ctx.WriteString("not found")
 
 }
 
+/*
 //@router /user/login [post]
 func (u *AdminController) loginAdmin() {
 
