@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"encoding/json"
 	"log"
 	"podcast_api/models"
 
@@ -44,6 +45,14 @@ func (a *AdminController) GetAdmin() {
 //@router /user    [post]
 func (u *AdminController) addAdmin() {
 
+	var admin models.Admin
+	json.Unmarshal(data, &admin)
+
+	log.Print()
+	log.Print()
+	log.Print()
+
+	log.Print("add user to db return 200 status code")
 }
 
 //delete account. more params passed including key
