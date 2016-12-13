@@ -74,6 +74,8 @@ func (u *AdminController) updateAdmin() {
 
 }
 
+//stuff
+
 //@router /user/logout [get]
 func (u *AdminController) logoutAdmin() {
 
