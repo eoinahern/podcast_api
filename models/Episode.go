@@ -6,4 +6,7 @@ func GetEpisode() *Episode {
 }
 
 type Episode struct {
+	Id       string `json:"id"`
+	AudioUrl string `json:"audiourl"`
+	Created  string `json:"created"`
 }
