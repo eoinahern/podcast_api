@@ -14,6 +14,7 @@ type AdminController struct {
 
 func (a *AdminController) URLMapping() {
 	a.Mapping("GetAdmin", a.GetAdmin)
+	a.Mapping("AddAdmin", a.AddAdmin)
 }
 
 // @router /user/:id [get]
@@ -41,20 +42,22 @@ func (a *AdminController) GetAdmin() {
 
 }
 
-//register user
-//@router /user    [post]
-func (u *AdminController) addAdmin() {
+//@router /user [post]
+func (u *AdminController) AddAdmin() {
 
 	var admin models.Admin
-	json.Unmarshal(data, &admin)
+	json.Unmarshal(u.Ctx.Input.RequestBody, &admin)
 
-	log.Print()
-	log.Print()
-	log.Print()
+	log.Print(admin.Email)
+	log.Print(admin.Name)
+	log.Print(admin.Password)
 
 	log.Print("add user to db return 200 status code")
+	u.Ctx.ResponseWriter.WriteHeader(200)
+	u.Ctx.WriteString("success")
 }
 
+/*
 //delete account. more params passed including key
 //@router /user/:id [delete]
 func (u *AdminController) deleteAdmin() {
@@ -74,4 +77,4 @@ func (u *AdminController) updateAdmin() {
 //@router /user/logout [get]
 func (u *AdminController) logoutAdmin() {
 
-}
+}*/
