@@ -12,19 +12,21 @@ type AdminController struct {
 }
 
 func (a *AdminController) URLMapping() {
-	a.Mapping("GetUser", a.GetUser)
+	a.Mapping("GetAdmin", a.GetAdmin)
 }
 
 // @router /user/:id [get]
-func (a *AdminController) GetUser() {
+func (a *AdminController) GetAdmin() {
 
 	id := a.GetString(":id")
 	log.Print(id)
 
 	admin := &models.Admin{
-		Name:     "eoin",
-		Email:    "eoinpahern@yahoo.co.uk",
-		Password: "pass1",
+		Name:         "eoin",
+		Email:        "eoinpahern@yahoo.co.uk",
+		Password:     "pass1",
+		IsRegistered: false,
+		Isloggedin:   false,
 	}
 
 	/*jsonadmin, err := json.Marshal(admin)
@@ -38,14 +40,29 @@ func (a *AdminController) GetUser() {
 
 }
 
-/*   //@router /user    [post]
-func (u *UserController) addUser() {
+//register user
+//@router /user    [post]
+func (u *AdminController) addAdmin() {
 
-}*/
+}
 
-/*//@router /user/:id [delete]
-func (u *UserController) deleteUser() {
+//delete account. more params passed including key
+//@router /user/:id [delete]
+func (u *AdminController) deleteAdmin() {
 
-}*/
+}
 
-//register, login, update.
+//@router /user/login [post]
+func (u *AdminController) loginAdmin() {
+
+}
+
+//@router /user/:id [put]
+func (u *AdminController) updateAdmin() {
+
+}
+
+//@router /user/logout [get]
+func (u *AdminController) logoutAdmin() {
+
+}

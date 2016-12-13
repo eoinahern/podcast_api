@@ -11,5 +11,6 @@ import (
 func init() {
 	//beego.Router("/", &controllers.MainController{})
 	beego.Include(&controllers.AdminController{})
+	beego.Include(&controllers.EpisodeController{})
 
 }

@@ -6,7 +6,9 @@ func GetAdmin() *Admin {
 }
 
 type Admin struct {
-	Name     string `json:"name"`
-	Email    string `json:"email"`
-	Password string `json:"password"`
+	Name         string `json:"name"`
+	Email        string `json:"email"`
+	Password     string `json:"password"`
+	Isloggedin   bool   `json:"isloggedin"`
+	IsRegistered bool   `json:"isregistered"`
 }
