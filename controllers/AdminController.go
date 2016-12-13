@@ -24,12 +24,14 @@ func (a *AdminController) GetAdmin() {
 	id := a.GetString(":id")
 	log.Print(id)
 
-	admin := &models.Admin{
-		Name:         "eoin",
-		Email:        "eoinpahern@yahoo.co.uk",
-		Password:     "pass1",
-		IsRegistered: false,
-		Isloggedin:   false,
+	var admin models.Admin = models.Admin{}
+	admin.Name = "eoin"
+	admin.Email = "eoinpahern@yahoo.co.uk"
+	admin.Password = "Pass1"
+
+	var adminresp = &models.AdminResp{
+		Status: "Success",
+		Admin:  admin,
 	}
 
 	/*jsonadmin, err := json.Marshal(admin)
@@ -38,7 +40,7 @@ func (a *AdminController) GetAdmin() {
 		log.Fatal("err converting")
 	}*/
 
-	a.Data["json"] = &admin
+	a.Data["json"] = &adminresp
 	a.ServeJSON()
 
 }
@@ -56,6 +58,7 @@ func (u *AdminController) AddAdmin() {
 	log.Print("add user to db return 200 status code")
 	u.Ctx.ResponseWriter.WriteHeader(200)
 	u.Ctx.WriteString("success")
+
 }
 
 //delete account. more params passed including key

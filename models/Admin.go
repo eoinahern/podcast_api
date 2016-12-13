@@ -12,3 +12,8 @@ type Admin struct {
 	Isloggedin   bool   `json:"isloggedin"`
 	IsRegistered bool   `json:"isregistered"`
 }
+
+type AdminResp struct {
+	Status string `json:"status"`
+	Admin  Admin  `json:"admin"`
+}
