@@ -77,12 +77,31 @@ func (u *AdminController) DeleteAdmin() {
 
 }
 
-/*
 //@router /user/login [post]
 func (u *AdminController) loginAdmin() {
 
+	var admin models.Admin
+	json.Unmarshal(u.Ctx.Input.RequestBody, &admin)
+
+	var adminresp models.AdminResp
+
+	adminresp.Admin.Email = admin.Email
+	adminresp.Admin.Password = admin.Password
+
+	if admin.Password == "shazam" {
+		adminresp.Status = "Success"
+		adminresp.Admin.Isloggedin = true
+	} else {
+		adminresp.Status = "failed"
+		adminresp.Admin.Isloggedin = false
+	}
+
+	u.Data["json"] = &adminresp
+	u.ServeJSON()
+
 }
 
+/*
 //@router /user/:id [put]
 func (u *AdminController) updateAdmin() {
 
