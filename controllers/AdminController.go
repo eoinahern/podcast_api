@@ -16,6 +16,7 @@ func (a *AdminController) URLMapping() {
 	a.Mapping("GetAdmin", a.GetAdmin)
 	a.Mapping("AddAdmin", a.AddAdmin)
 	a.Mapping("DeleteAdmin", a.DeleteAdmin)
+	a.Mapping("LoginAdmin", a.LoginAdmin)
 }
 
 // @router /user/:id [get]
@@ -78,7 +79,7 @@ func (u *AdminController) DeleteAdmin() {
 }
 
 //@router /user/login [post]
-func (u *AdminController) loginAdmin() {
+func (u *AdminController) LoginAdmin() {
 
 	var admin models.Admin
 	json.Unmarshal(u.Ctx.Input.RequestBody, &admin)

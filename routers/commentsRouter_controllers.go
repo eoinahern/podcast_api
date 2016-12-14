@@ -27,4 +27,11 @@ func init() {
 			AllowHTTPMethods: []string{"delete"},
 			Params:           nil})
 
+	beego.GlobalControllerRouter["podcast_api/controllers:AdminController"] = append(beego.GlobalControllerRouter["podcast_api/controllers:AdminController"],
+		beego.ControllerComments{
+			Method:           "LoginAdmin",
+			Router:           `/user/login`,
+			AllowHTTPMethods: []string{"post"},
+			Params:           nil})
+
 }
