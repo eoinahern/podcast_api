@@ -10,7 +10,7 @@ import (
 func init() {
 
 	orm.RegisterDriver("sqlite3", orm.DRSqlite)
-	err := orm.RegisterDataBase("default", "sqlite3", "file:../../../../sqlite/podcast.db")
+	err := orm.RegisterDataBase("default", "sqlite3", "file:sqlite/podcast.db")
 
 	if err != nil {
 		panic(err)
