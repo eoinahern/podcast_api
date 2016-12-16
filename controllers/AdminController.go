@@ -35,12 +35,6 @@ func (a *AdminController) GetAdmin() {
 		Admin:  admin,
 	}
 
-	/*jsonadmin, err := json.Marshal(admin)
-
-	if err != nil {
-		log.Fatal("err converting")
-	}*/
-
 	a.Data["json"] = &adminresp
 	a.ServeJSON()
 

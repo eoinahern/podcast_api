@@ -11,6 +11,7 @@ type Admin struct {
 	Password     string `json:"password"`
 	Isloggedin   bool   `json:"isloggedin"`
 	IsRegistered bool   `json:"isregistered"`
+	AuthKey      string `json:"authkey"`
 }
 
 type AdminResp struct {
