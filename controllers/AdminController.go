@@ -4,16 +4,16 @@ import (
 	"encoding/json"
 	"log"
 	"podcast_api/models"
+	"podcast_api/helpers"
 
 	"github.com/astaxie/beego"
-	"github.com/astaxie/beego/orm"
 )
 
-var o orm.Ormer //database access
+var Ormhelper orm.Ormer
 
 type AdminController struct {
 	beego.Controller
-	o = orm.NewOrm()
+	Ormhelper  = new(helpers.Ormhelper).GetOrm()
 }
 
 func (a *AdminController) URLMapping() {
@@ -21,11 +21,11 @@ func (a *AdminController) URLMapping() {
 	a.Mapping("AddAdmin", a.AddAdmin)
 	a.Mapping("DeleteAdmin", a.DeleteAdmin)
 	a.Mapping("LoginAdmin", a.LoginAdmin)
+
 }
 
 // @router /user/:id [get]
 func (a *AdminController) GetAdmin() {
-
 	id := a.GetString(":id")
 	log.Print(id)
 
