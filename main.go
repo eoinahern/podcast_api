@@ -20,6 +20,8 @@ func init() {
 }
 
 func main() {
+	o := orm.NewOrm()
+	o.Using("default")
 	beego.Run()
 
 }
