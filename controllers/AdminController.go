@@ -6,10 +6,14 @@ import (
 	"podcast_api/models"
 
 	"github.com/astaxie/beego"
+	"github.com/astaxie/beego/orm"
 )
+
+var o orm.Ormer //database access
 
 type AdminController struct {
 	beego.Controller
+	o = orm.NewOrm()
 }
 
 func (a *AdminController) URLMapping() {
