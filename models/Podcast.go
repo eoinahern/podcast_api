@@ -9,7 +9,7 @@ type Podcast struct {
 	Name     string `json:"name"`
 	Category string `json:"category"`
 	WebSite  string `json:"website"`
-	Email    string `json:"email"`
+	Email    string `json:"email" orm:"rel(fk)"`
 }
 
 func (a *Podcast) TableName() string {

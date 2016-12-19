@@ -26,6 +26,7 @@ func main() {
 	orm.RegisterModel(new(models.Admin))
 	orm.RegisterModel(new(models.Episode))
 	orm.RegisterModel(new(models.Podcast))
+
 	beego.Run()
 
 }

@@ -9,8 +9,7 @@ func GetEpisode() *Episode {
 
 type Episode struct {
 	Id       string    `json:"id" orm:"pk,auto"`
-	Podcast  string    `json:"podcast"`
-	Email    string    `json:"id"`
+	Email    string    `json:"email"`
 	AudioUrl string    `json:"audiourl"`
 	Created  time.Time `json:"created" orm:"auto_now_add;type(date)"`
 }

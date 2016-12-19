@@ -7,7 +7,7 @@ func GetAdmin() *Admin {
 
 type Admin struct {
 	Name         string `json:"name"`
-	Email        string `json:"email"`
+	Email        string `json:"email"  orm:"pk; unique"`
 	Password     string `json:"password"`
 	Isloggedin   bool   `json:"isloggedin"`
 	IsRegistered bool   `json:"isregistered"`
@@ -21,5 +21,4 @@ type AdminResp struct {
 
 func (a *Admin) TableName() string {
 	return "admin"
-
 }
