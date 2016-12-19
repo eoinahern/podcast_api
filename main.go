@@ -21,12 +21,12 @@ func init() {
 }
 
 func main() {
+
+	beego.Run()
 	o := orm.NewOrm()
 	o.Using("default")
 	orm.RegisterModel(new(models.Admin))
-	orm.RegisterModel(new(models.Episode))
-	orm.RegisterModel(new(models.Podcast))
 
-	beego.Run()
+	orm.RunSyncdb("default", false, true)
 
 }

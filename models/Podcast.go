@@ -6,7 +6,8 @@ func GetPodcast() *Podcast {
 }
 
 type Podcast struct {
-	Name     string `json:"name"`
+	Id       int64  `json:"id" orm:"pk, auto, unique"`
+	Name     string `json:"name" orm:"pk"`
 	Category string `json:"category"`
 	WebSite  string `json:"website"`
 	Email    string `json:"email" orm:"rel(fk)"`
