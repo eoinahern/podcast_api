@@ -18,3 +18,8 @@ type AdminResp struct {
 	Status string `json:"status"`
 	Admin  Admin  `json:"admin"`
 }
+
+func (a *Admin) TableName() string {
+	return "admin"
+
+}

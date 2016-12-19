@@ -11,3 +11,7 @@ type Podcast struct {
 	WebSite  string `json:"website"`
 	Email    string `json:"email"`
 }
+
+func (a *Podcast) TableName() string {
+	return "podcast"
+}
