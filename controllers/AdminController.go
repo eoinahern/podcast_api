@@ -5,15 +5,16 @@ import (
 	"log"
 	"podcast_api/models"
 	"podcast_api/helpers"
+	"github.com/astaxie/beego/orm"
 
 	"github.com/astaxie/beego"
 )
 
-var Ormhelper orm.Ormer
+ var blah orm.Ormer
 
 type AdminController struct {
 	beego.Controller
-	Ormhelper  = new(helpers.Ormhelper).GetOrm()
+	blah  = new(helpers.Ormhelper).GetOrm()
 }
 
 func (a *AdminController) URLMapping() {
